@@ -13,7 +13,6 @@ if (!currentUser) {
 }
 
 
-/* USER INFORMATION */
 
 document.getElementById("userName").innerText =
     currentUser.name;
@@ -22,7 +21,6 @@ document.getElementById("userEmail").innerText =
     currentUser.email;
 
 
-/* GET REVIEWS FROM MYSQL */
 
 async function displayMyReviews() {
 
@@ -46,18 +44,15 @@ async function displayMyReviews() {
         }
 
 
-        /* REVIEW COUNT */
 
         document.getElementById("reviewCount")
             .innerText = myReviews.length;
 
 
-        /* CLEAR OLD CONTENT */
 
         container.innerHTML = "";
 
 
-        /* NO REVIEWS */
 
         if (myReviews.length === 0) {
 
@@ -71,7 +66,6 @@ async function displayMyReviews() {
         }
 
 
-        /* DISPLAY REVIEWS */
 
         myReviews.forEach(review => {
 
@@ -123,8 +117,6 @@ async function displayMyReviews() {
 
 }
 
-
-/* DELETE REVIEW */
 async function deleteReview(reviewId) {
 
     const confirmation =
@@ -165,7 +157,6 @@ async function deleteReview(reviewId) {
     }
 }
 
-/* LOGOUT */
 
 function logout() {
 

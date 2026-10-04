@@ -9,10 +9,6 @@ const app = express();
 const PORT = 3000;
 
 
-/* =========================
-   MYSQL CONNECTION
-========================= */
-
 const connection = mysql.createConnection({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
@@ -35,9 +31,6 @@ connection.connect(function(error) {
 });
 
 
-/* =========================
-   MIDDLEWARE
-========================= */
 
 app.use(express.json());
 
@@ -60,20 +53,12 @@ app.use(function(req, res, next) {
     next();
 });
 
-/* =========================
-   TEST ROUTE
-========================= */
-
 app.get("/", function(req, res) {
 
     res.send("Movie Review Platform API is running!");
 
 });
 
-
-/* =========================
-   GET ALL MOVIES
-========================= */
 
 app.get("/api/movies", function(req, res) {
 
@@ -139,7 +124,6 @@ app.get("/api/movies/:id", function(req, res) {
 
 });
 
-// REGISTER USER
 app.post("/api/register", async function(req, res) {
 
     const name = req.body.name;
@@ -148,7 +132,6 @@ app.post("/api/register", async function(req, res) {
 
     try {
 
-        // Hash the password
         const hashedPassword = await bcrypt.hash(password, 10);
 
         const query = `
@@ -197,8 +180,6 @@ app.post("/api/register", async function(req, res) {
 
 });
 
-// LOGIN USER
-// LOGIN USER
 
 app.post("/api/login", async function(req, res) {
 
@@ -259,7 +240,6 @@ app.post("/api/login", async function(req, res) {
 });
 
 
-// GET REVIEWS FOR A MOVIE
 
 app.get("/api/reviews/:movieId", function(req, res) {
 
@@ -303,7 +283,6 @@ app.get("/api/reviews/:movieId", function(req, res) {
 });
 
 
-// ADD REVIEW
 
 app.post("/api/reviews", function(req, res) {
 
@@ -353,7 +332,7 @@ app.post("/api/reviews", function(req, res) {
 
 });
 
-// ADD MOVIE TO WATCHLIST
+
 app.post("/api/watchlist", function(req, res) {
     const userId = req.body.userId;
     const movieId = req.body.movieId;
@@ -391,7 +370,6 @@ app.post("/api/watchlist", function(req, res) {
 });
 
 
-// GET USER WATCHLIST
 app.get("/api/watchlist/:userId", function(req, res) {
     const userId = req.params.userId;
 
@@ -426,7 +404,6 @@ app.get("/api/watchlist/:userId", function(req, res) {
     );
 });
 
-// REMOVE MOVIE FROM WATCHLIST
 app.delete("/api/watchlist/:userId/:movieId", function(req, res) {
 
     const userId = req.params.userId;
@@ -457,7 +434,6 @@ app.delete("/api/watchlist/:userId/:movieId", function(req, res) {
 });
 
 
-// GET REVIEWS WRITTEN BY A USER
 app.get("/api/user-reviews/:userId", function(req, res) {
 
     const userId = req.params.userId;
@@ -494,7 +470,6 @@ app.get("/api/user-reviews/:userId", function(req, res) {
     );
 });
 
-// DELETE REVIEW
 app.delete("/api/reviews/:reviewId", function(req, res) {
 
     const reviewId = req.params.reviewId;
@@ -523,9 +498,6 @@ app.delete("/api/reviews/:reviewId", function(req, res) {
     );
 });
 
-/* =========================
-   START SERVER
-========================= */
 
 app.listen(PORT, function() {
 

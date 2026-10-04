@@ -63,9 +63,6 @@ loginForm.addEventListener(
 
             }
 
-
-            // Save logged-in user
-
             localStorage.setItem(
                 "currentUser",
                 JSON.stringify(data.user)

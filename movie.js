@@ -1,10 +1,6 @@
 let movie = null;
 
 
-/* =========================
-   GET SELECTED MOVIE
-========================= */
-
 const selectedId =
     JSON.parse(
         localStorage.getItem("selectedMovie")
@@ -60,9 +56,6 @@ async function loadMovie() {
 }
 
 
-/* =========================
-   DISPLAY MOVIE
-========================= */
 
 function displayMovie() {
 
@@ -79,9 +72,11 @@ function displayMovie() {
             <div class="col-md-4">
 
                 <div class="movie-detail-poster">
-                    🎬
+                    <img
+                        src="${localStorage.getItem("selectedMoviePoster")}"
+                        alt="${movie.title}"
+                    >
                 </div>
-
             </div>
 
 
@@ -120,9 +115,6 @@ function displayMovie() {
 }
 
 
-/* =========================
-   WATCHLIST
-========================= */
 
 async function addToWatchlist() {
 
@@ -161,9 +153,6 @@ async function addToWatchlist() {
     }
 }
 
-/* =========================
-   REVIEWS
-========================= */
 
 async function displayReviews() {
 
@@ -258,9 +247,6 @@ async function displayReviews() {
 
 }
 
-/* =========================
-   SUBMIT REVIEW
-========================= */
 
 const reviewForm =
     document.getElementById("reviewForm");
@@ -389,7 +375,6 @@ reviewForm.addEventListener(
     }
 );
 
-/* START */
 
 loadMovie();
 

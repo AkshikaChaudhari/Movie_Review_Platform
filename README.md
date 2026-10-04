@@ -72,3 +72,20 @@ Movie_Review_Platform/
     ├── readMovies.js
     ├── multiMovies.js
     └── Script.js
+
+## 📸 Screenshots
+
+### Home Page
+![Home Page](screenshots/home.png)
+
+### Movies Page
+![Movies Page](screenshots/movies.png)
+
+### Movie Details
+![Movie Details](screenshots/movie-details.png)
+
+### Watchlist
+![Watchlist](screenshots/watchlist.png)
+
+### Profile
+![Profile](screenshots/profile.png)
