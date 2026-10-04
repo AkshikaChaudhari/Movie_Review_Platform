@@ -1363,3 +1363,78 @@ hr {
     box-shadow:
         0 8px 20px rgba(244, 63, 94, 0.4);
 }
+
+/* =========================================================
+   BOOTSTRAP CARDS - DARK CINEMA DESIGN
+   ========================================================= */
+
+.card {
+    background-color: var(--bg-surface) !important;
+    color: var(--text-main) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 16px;
+}
+
+.card-body {
+    background-color: var(--bg-surface) !important;
+    color: var(--text-main) !important;
+}
+
+.card-title {
+    color: var(--text-main) !important;
+}
+
+.card-text {
+    color: var(--text-muted) !important;
+}
+
+/* =========================================================
+   FINAL CARD CORNER FIX
+   ========================================================= */
+
+/* Movie cards + Home feature cards */
+.card {
+    background-color: var(--bg-surface) !important;
+    color: var(--text-main) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 16px !important;
+    overflow: hidden !important;
+}
+
+/* Keep the inside of Bootstrap cards dark */
+.card .card-body {
+    background-color: var(--bg-surface) !important;
+    color: var(--text-main) !important;
+}
+
+
+/* =========================================================
+   PROFILE REVIEW CARDS
+   ========================================================= */
+
+#myReviews .review {
+    background: var(--bg-surface) !important;
+    color: var(--text-main) !important;
+
+    border: 1px solid var(--border-color) !important;
+    border-left: 4px solid var(--accent-indigo) !important;
+
+    border-radius: 18px !important;
+
+    overflow: hidden !important;
+
+    /* Remove the excessive blur/glow */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25) !important;
+
+    padding: 24px !important;
+}
+
+
+/* Review hover */
+#myReviews .review:hover {
+    transform: translateY(-3px);
+
+    border-color: rgba(129, 140, 248, 0.5) !important;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35) !important;
+}
